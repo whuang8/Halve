@@ -1,10 +1,10 @@
 ---
 layout: home
 ---
-# About Theme
+# About me
 
-This theme is Jekyll port of [vangeltzo.com](http://vangeltzo.com/) (by [Vangelis Tzortzis](https://github.com/srekoble)).
+I am a student in my Senior year @ Purdue University. I study Computer Science with a concentration on Software Engineering. I love to travel and eat. Hopefully one day, I can travel to every corner of the world and stuff my face along the way.
 
-To learn how to install and use this theme check out the [installation guide](http://taylantatli.me/Halve/halve-theme/) for more information.
+Welcome to my online home where you can see some of my blogs and projects I am working on. Have something to tell me? You can drop me a line at [iwill@purdue.edu](mailto:iwill@purdue.edu).
 
-If you have a question, find a bug, or just want to say hi, please open an [issue on GitHub](https://github.com/TaylanTatli/Halve/issues/new).
+All photographs provided by either [unsplash](https://unsplash.com/) or [Me](#).
