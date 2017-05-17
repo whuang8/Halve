@@ -1,65 +1,82 @@
-# Site
-title: William Huang
-description: Purdue University
-url: https://whuang8.github.io
-logo: halve.png                                       # Site logo
-locale: en_US
+# # # # # # # # # # # # #
+#   K i k o - p l u s   #
+# # # # # # # # # # # # #
 
-# Left Block Images
-background:
-  homepage: images/home.png                           # this image will be shown on homepage's left block
-  post-list: images/unsplash-image-10.jpg             # this image will be shown on post list page
-  default-post: images/unsplash-gallery-image-3.jpg   # this image will be shown when post's front matter doesn't specify any image
+# Basic
+name:               "William Huang"
 
-# Jekyll
-permalink:          /:title/
+author:
+  twitter:          whuang8
+  github:           whuang8
+  linkedin:         whuang8
+  email:            willhuang08@gmail.com
+
+copyright:
+  year:             2017
+  name:             William Huang
+
+# Google-analytics
+google-analytics:
+  id:               ""
+
+# Disqus
+disqus:
+  id:               "williamhuang-1"
+
+# URL
+#url:                "https://AWEEKJ.github.io" # the base hostname & protocol for your site
+url:                "http://localhost:4000" # use this url when you develop
+baseurl:            "" # the subpath of your site, e.g. /blog
+
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:           America/New_York
+permalink:          /:year-:month-:day/:title/
+
+# Pagination
+paginate:           5
+paginate_path:      /page:num/
+
+# Markdown
 markdown:           kramdown
-highlighter:        rouge
 kramdown:
-  auto_ids:         true
-  footnote_nr:      1
-  entity_output:    as_char
-  toc_levels:       1..6
-  enable_coderay:   false
+  input:            GFM
+
+# Navigation
+nav:
+  - name:           "About"
+    url:            "/about"
+  - name:           "Archive"
+    url:            "/archive"
+  - name:           "Tags"
+    url:            "/tags"
+  - name:           "Github"
+    url:            "https://github.com/whuang8"
+
+# Sass
 sass:
-  sass_dir:         assets/_sass
-  style:            compressed
+  sass_dir:         _sass
+  style:            :compressed
 
-# Google Analytics
-#google-analytics: UA-XXXXX-Y
+# Scopes
+defaults:
+  -
+    scope:
+      path:         ""
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      path:         ""
+      type:         "posts"
+    values:
+      layout:       "post"
 
-# Social Links
-email:             iwill@purdue.edu
-#google.plus:        username
-twitter:            whuang8
-#facebook:           username
-github:             whuang8
-#stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
-linkedin:          whuang8
-#xing:              username
-#instagram:          username
-#lastfm:            username
-#tumblr:            username
-#pinterest:         username
-#foursquare:        username
-#steam:              username
-#dribbble:          username
-#youtube:           username
-#soundcloud:        username
-#weibo:             username
-#flickr:            username
-#codepen:           username
-#keybase:           username
-#xmpp:              username@server.com
-#hackernews:        username
-#behance:           username
-
-# Gems
+# jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
 gems:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-gist
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-admin
 
-# Exclude list
-include: [_pages]
-exclude: [README.md, Gemfile, Gemfile.lock, _site, src, vendor, CNAME, LICENSE, Rakefile, .sass-cache, .DS_Store]
+exclude:            [vendor]

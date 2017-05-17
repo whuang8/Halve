@@ -1,47 +1,37 @@
 ---
-layout: compress
+layout: default
 ---
+<header>
+  <div class="header-small">
+    <a href="{{site.url}}{{site.baseurl}}">{{ site.name }}</a>
+  </div>
+</header>
+<div class="post">
+  <div class="post-title">{{ page.title }}</div>
+  <span class="post-date">
+    <time>{{ page.date | date_to_string }}</time>
+  </span>
+  <div class="post-tag">
+    <ul>
+      {% for tag in page.tags %}
+      <li>
+        <a href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
+          <span>{{ tag }}</span>
+        </a>
+      </li>
+      {% unless forloop.last %}{% endunless %}
+      {% endfor %}
+    </ul>
+  </div>
 
-<!DOCTYPE html>
-<html>
-{% include head.html %}
-<body id="posts" class="inner-post-page">
+  {{ content }}
 
-    <div class="block-left">
-      <div class="content">
-        <a href="{{ site.url }}" class="logo"><img src="{{ site.url }}/images/{{ site.logo }}"></a>
-        <div class="post-title-section">
-          <div class="section-line">Posts <em>/</em></div>
-          <h1 class="section-title">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
-          <ul class="tags">
-            {% for tag in page.tags %}
-              <li><a href="{{ site.url }}/tags#{{ tag }}">{{ tag }}</a></li>
-              {% unless forloop.last %}
-              {% endunless %}
-            {% endfor %}
-          </ul>
-          <div class="section-line reverse"><a href="{{ site.url}}/posts">Back to posts</a> <em>/</em></div>
-        </div>
-      </div>
-    </div>
+  <!-- Disqus -->
+  {% if page.comments != false and site.disqus.id %}
+  <div class="post-disqus">
+      <section id="disqus_thread"></section>
+      {% include disqus.html %}
+  </div>
+  {% endif %}
 
-    <div class="block-right">
-      <div class="share-buttons">
-        {% include share.html %}
-      </div>
-      <a href="../posts.html" title="posts" class="posts-menu-icon"></a>
-      <a title="projects" class="projects-menu-icon">
-        <span></span>
-      </a>
-      <div class="inner-post content">
-        <div class="date-highlight">{% if page.date %}{{ page.date | date: '%d %b %Y' }}{% else %}&#x2756;{% endif %}</div>
-        {{ content }}
-        <br>
-        {% include share.html %}
-        {% include page-pagination.html %}
-      </div>
-    </div>
-    {% include scripts.html %}
-    {% include overlay.html %}
-</body>
-</html>
+</div>
