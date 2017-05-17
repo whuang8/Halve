@@ -37,9 +37,9 @@ body {
 
   &-title {
     margin: 0.3em 0;
-    font-size: 2.25em;
+    font-size: 2.00em;
     line-height: 1.2em;
-    font-weight: 600;
+    font-weight: 300;
 
     a {
       color: $base-color;
@@ -57,7 +57,7 @@ body {
 
   &-nav {
     a {
-      color: $oc-gray-7;
+      color: #aaa;
       text-transform: lowercase;
       -webkit-transition: all .2s ease;
          -moz-transition: all .2s ease;

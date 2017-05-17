@@ -4,7 +4,7 @@ layout: default
 
 <header class="header">
   <div class="header-title">
-    <a href="{{ site.url }}{{ site.baseurl }}">{{ site.name }}<span style="color:grey;">'s blog</span></a>
+    <a href="{{ site.url }}{{ site.baseurl }}">{{ site.name }}<span style="color:#ddd;">'s blog</span></a>
   </div>
   <nav class="header-nav">
     {% for nav in site.nav %}
@@ -19,7 +19,7 @@ layout: default
 
 <div class="list">
 {% if site.posts.size == 0 %}
-  <h2>No post found</h2>
+  <h3>No post found</h3>
 {% else %}
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
